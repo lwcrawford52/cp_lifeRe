@@ -1,0 +1,427 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&display=swap');
+// Variables
+@import "variables.less";
+ 
+// Mixins 
+// Misc
+
+
+body {
+    font-family: 'Lora', serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: @dark;
+    line-height: 1.5;
+}
+h2 {
+    font-weight: 400;
+    font-size: 42px;
+    color: #006188;
+}
+.site-header {
+    width: 100%;
+    border-top: 7px solid @teal;
+    z-index: 100;
+    position: absolute;
+}
+.site-branding {
+    background: #fff;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0px 3px 6px #00000029;
+    width: 472px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.logo {
+    top: 19px;
+    width: 404px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px 0;
+}
+.header-button {
+    position: absolute;
+    top: 30px;
+    right: 150px;
+    font-family: 'Lora', serif;
+    font-size: 16px;
+}
+.donate {
+    margin-top: 45px;
+    font-family: 'Lora', serif;
+    font-size: 20px;
+}
+.button {
+    background: @pink 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 6px #00000029;
+    border: 2px solid #FFFFFF;
+    border-radius: 24px;
+    width: 127px;
+    height: 46px;
+    padding: 5px;
+    color: #fff;
+    &:hover {
+        background: #921267;
+        transition-duration: 0.2s;
+    }
+}
+.bold {
+    font-weight: 700;
+}
+.chevron {
+    font-size: 12px;
+    padding-left: 2px;
+}
+.hero {
+    background-image: url('../assets/LifeReimagined_Banner.jpg');
+    height: 900px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+.hero-overlay {
+    background: #000000 0% 0% no-repeat padding-box;
+    opacity: 0.4;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.hero-text {
+    margin: 0;
+    position: absolute;
+    text-align: center;
+    color: #fff;
+    margin-left: auto;
+    padding-top: 350px;
+    width: 100%;
+    h1 {
+        font-size: 100px;
+        font-weight: 400;
+        line-height: 1.25;
+        padding-bottom: 1.5em;
+    }
+}
+.arrow {
+    font-size: 50px;
+    margin: 0;
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+    width: 100%;
+}
+.intro-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-row-gap: 50px;
+    grid-column-gap: 50px;
+    max-width: 1320px;
+    margin-left: auto;
+}
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-row-gap: 50px;
+    grid-column-gap: 50px;
+    max-width: 1320px;
+    margin-left: auto;
+}
+.intro {
+    background: @light-blue;
+    padding: 100px;
+}
+.overlap-container {
+    position: relative;
+    margin-left: auto;
+}
+.intro-image {
+    width: 702px;
+}
+.intro-text {
+    position: absolute;
+    width: 626px;
+    bottom: 40px;
+    right: -500px;
+    background-color: #fff;
+    border-left: 8px solid @green;
+    border-radius: 0 30px 30px 0;
+    color: @dark;
+    padding: 30px 60px 30px 50px;
+    border-radius: 0px 30px 30px 0px;
+    h3 {
+        color: #006188;
+        font-size: 35px;
+        font-weight: 400;
+    }
+}
+.impact {
+    height: 425px;
+    border-bottom: 6px solid @green;
+}
+.impact-text {
+    text-align: center;
+    width: 431px;
+    padding: 30px 0px;
+    margin: 0 auto;
+}
+.impact-image {
+    width: 100%;
+    img {
+        width: 326px;
+        margin-top: -49px;
+    }
+}
+.site-footer {
+    background: @dark-blue;
+}
+.contact {
+    background: transparent url('../assets/LifeReimagined_Pattern.png') 0% 0% repeat padding-box;
+    padding: 100px;
+}
+.footer-logo {
+    width: 485px;
+}
+.contact-text {
+    color: #fff;
+    font-size: 22px;
+}
+ul {
+    padding-inline-start: 0;
+}
+.social {
+    margin: 0;
+    list-style-type: none;
+    display: inline-flex;
+    li {
+        margin-right: 25px;
+        text-align: left;
+    }
+}
+.site-info {
+    background: @dark-blue;
+    text-align: center;
+    color: #fff;
+    padding: 15px;
+}
+.email-signup {
+    background: @dark-blue;
+    border-radius: 25px;
+    padding: 20px 50px;
+    color: @lime;
+    h2 {
+        text-align: center;
+        color: @lime;
+    }
+    input {
+        color: @teal;
+    }
+}
+.green {
+    color: @lime;
+}
+.icon {
+    margin-right: 20px;
+}
+.bigger {
+    font-size: 22px;
+}
+#gform_submit_button_1 {
+    background: @green 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 6px #00000029;
+    border: 2px solid #FFFFFF;
+    border-radius: 24px;
+    height: 43px;
+    width: 152px;
+    padding: 9px;
+    font-family: 'Lora', serif;
+    font-weight: bold;
+    font-size: 20px;
+    color: #fff;
+    margin-top: 65px;
+    &:hover {
+            background: #97D22A;
+            transition-duration: 0.2s;
+        }
+}
+
+i {
+    &.fa {
+        &.fa-chevron-right {
+            color: @lime;
+            font-size: 18px;
+        }
+    }
+}
+.gform_wrapper *, .gform_wrapper :after, .gform_wrapper :before {
+    border-radius: 24px;
+    height: 46px;
+    border: 2 px solid #006188 !important;
+}
+#input_1_1, #input_1_2 {
+    border: 2px solid #006188;
+    padding-left: 15px;
+    margin-bottom: 30px;
+    color: @teal !important;
+}
+/* input #input_1_1 :before {
+    content: '\f1d8';
+    
+    font-family: fontAwesome;
+    color: @green; 
+  } */
+
+
+
+
+  /* *** Media Queries *** */
+@media (max-width:1200px) {
+.header-button {
+    right:50px;
+}
+.intro-inner {
+    grid: none;
+}
+.overlap-container {
+    margin:0;
+}
+.intro-image {
+    width:602px;
+}
+.intro-text {
+    width: 526px;
+    bottom: 20px;
+    right: 10px;
+    padding:20px 50px 20px 50px;
+}
+.intro-text h3 {
+    font-size: 25px;
+}
+.footer-logo {
+    width:285px;
+}
+.contact-text {
+    font-size:18px;
+}
+.email-signup h2 {
+    margin-block-start: 0.1em;
+    margin-block-end: 0;
+    font-size:35px;
+}
+}
+@media (max-width:1024px) {
+.site-branding {
+    width:372px;
+}  
+.logo {
+    width:304px;
+}
+.header-button {
+    position: initial;
+    text-align:center;
+    padding-top:40px;
+}
+.hero-text h1 {
+    font-size: 75px;
+    padding-bottom: 3em;
+}
+.intro {
+    padding:60px;
+    height: 720px;
+}
+.intro-inner {
+    display:grid;
+    grid-template-columns: 1fr;
+}
+.intro-image {
+    width:500px;
+}
+.intro-text {
+    bottom: -250px;
+}
+.intro-text h3 {
+    margin-block-start: 0.5em
+    /* margin-block-end: 0.5em; */
+}
+.grid {
+    grid-column-gap: 0px;
+}
+.impact-image {
+    text-align:center;
+}
+}
+
+@media (max-width:768px) {
+.hero {
+    height:90vh;
+}
+.hero-text h1 {
+    font-size: 55px;
+    padding-bottom: 3em;
+}
+.grid {
+    grid-template-columns: 1fr;
+    padding-left:20px;
+    padding-right: 20px;
+}
+.impact {
+    height: auto;
+}
+.impact-text {
+    width:auto;
+    padding:30px;
+}
+.impact-image {
+    text-align:center;
+}
+.impact-image img {
+    width:150px;
+}
+.footer-logo {
+    width:255px;
+}
+.contact {
+    padding:50px;
+    font-size:16px;
+}
+.contact-text p {
+    margin-block-start: 0.5em;
+    margin-block-end: 0.5em;
+}
+.donate {
+    margin-top: 25px;
+    font-size: 18px;
+}
+.email-signup {
+    min-height: 325px;
+}
+}
+
+@media (max-width:480px) {
+    .hero-text h1 {
+        font-size: 45px;
+    }
+    .arrow {
+        font-size: 40px;
+        bottom:40px;
+    }
+    .intro {
+        padding: 30px 20px;
+    height: 700px;
+    }
+    .overlap-container {
+        position: initial;
+    }
+    .intro-image {
+        width:90%;
+    }
+    .intro-text {
+        width:85%;
+        bottom: -630px;
+        right:20px;
+        padding: 15px 25px;
+    }
+    .email-signup h2 {
+        font-size: 28px;
+    }
+}
