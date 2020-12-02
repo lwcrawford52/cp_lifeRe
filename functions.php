@@ -47,10 +47,11 @@ if ( ! function_exists( 'life_reimagined_setup' ) ) :
 		 */
 		add_theme_support( 'post-thumbnails' );
 
-		// This theme uses wp_nav_menu() in one location.
+		// Added location for social menu.
 		register_nav_menus(
 			array(
 				'menu-1' => esc_html__( 'Primary', 'life_reimagined' ),
+				'social' => esc_html__( 'Social', 'life_reimagined' ),
 			)
 		);
 
@@ -144,7 +145,7 @@ function life_reimagined_scripts() {
 	wp_style_add_data( 'life_reimagined-style', 'rtl', 'replace' );
 
 	// loading custom css here
-	wp_enqueue_style( 'life_reimagined-custom', get_template_directory_uri() . '/css/custom.css');
+	wp_enqueue_style( 'life_reimagined-custom', get_template_directory_uri() . '/css/style.css');
 
 	wp_enqueue_script( 'life_reimagined-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 

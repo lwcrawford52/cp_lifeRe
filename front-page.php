@@ -12,28 +12,31 @@ get_header();
 
 	<main id="primary" class="site-main">
 		
-	<div class="hero">
+	<div class="hero" style="<?php if( get_field('hero_image') ): ?>
+    background-image: url(<?php the_field('hero_image'); ?>);
+	<?php endif; ?>
+	">
+	
+		<!-- <img class="intro-image" src="<?php the_field('hero_image'); ?>" /> -->
 			<div class="hero-overlay">
 			</div>	
 				
 			<div class="hero-text">
 
 				<h1 class="translate-y"><?php the_field('hero_title'); ?></h1>
-				<span class="arrow"><i class="far fa-arrow-circle-down"></i></span>
+				<span class="arrow"><a href="#intro"><i class="far fa-arrow-circle-down"></i></a></span>
 			</div>
 		</div>
 
 		<!-- Intro Section -->
-		<div class="intro">
+		<div id="intro" class="intro">
 			<div class="intro-inner">
 				
 
 				<div class="overlap-container">
-					<!-- to do: fix this bit that isn't rendering for some reason -->
-					<!-- <img class="intro-image" src="<?php the_field('intro_image'); ?>" /> -->
-					<!-- <img src="<?php the_field('intro_image'); ?>" class="intro-image" alt="Who We Are" /> -->
 					
-					<img class="intro-image" src="<?php bloginfo('template_url'); ?>/assets/LifeReimagined_WhoWeAre.jpg">
+					<img class="intro-image" src="<?php the_field('intro_image'); ?>" />
+					
 					<div class="intro-text">
 						<h3><?php the_field('intro_title'); ?></h3>
 						<p><?php the_field('intro_text'); ?></p>

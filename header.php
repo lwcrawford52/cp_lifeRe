@@ -14,7 +14,7 @@
 <html <?php language_attributes(); ?>>
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 
 	<?php wp_head(); ?>
@@ -29,10 +29,9 @@
 
 	<header id="masthead" class="site-header">
 		<div class="header-inner">
-			<div class="placehold"></div>
 
 			<div class="site-branding">
-			<img src="<?php bloginfo('template_url'); ?>/assets/LifeReimagined_Logo_Color.svg" class="logo">
+			<a href="<?php echo get_home_url(); ?>"><img src="<?php bloginfo('template_url'); ?>/assets/LifeReimagined_Logo_Color.svg" class="logo"></a>
 
 			</div><!-- .site-branding -->
 
