@@ -195,3 +195,4 @@ add_filter("gform_submit_button_1", "form_submit_button", 10, 2);
 function form_submit_button($button, $form){
 return "<button class='button' id='gform_submit_button_{$form["id"]}'><span>Subscribe <i class='fa fa-chevron-right'></i></span></button>";
 }
+

@@ -37,7 +37,7 @@
 
 			<div class="header-button">
 					<!-- todo: donate CTA button -->
-					<button class="button bold">Donate <span class="green chevron"><i class="fas fa-chevron-right"></i></span></button>
+					<a href="https://www.paypal.com/donate/?hosted_button_id=5F3SLSBR8QEML" target="new"><button class="button bold">Donate <span class="green chevron"><i class="fas fa-chevron-right"></i></span></button></a>
 			</div>
 
 		</div>

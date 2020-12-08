@@ -38,6 +38,7 @@ h2 {
   font-weight: 400;
   font-size: 42px;
   color: #006188;
+  line-height: 1.2;
 }
 .site-header {
   width: 100%;
@@ -81,6 +82,7 @@ h2 {
   width: 127px;
   height: 46px;
   padding: 5px;
+  font-size: 20px;
   color: #fff;
 }
 .button:hover {
@@ -95,7 +97,7 @@ h2 {
   font-weight: 700;
 }
 .chevron {
-  font-size: 12px;
+  font-size: 15px;
   padding-left: 2px;
 }
 .hero {
@@ -118,14 +120,14 @@ h2 {
   text-align: center;
   color: #fff;
   margin-left: auto;
-  padding-top: 350px;
+  padding-top: 290px;
   width: 100%;
 }
 .hero-text h1 {
   font-size: 100px;
   font-weight: 400;
-  line-height: 1.25;
-  padding-bottom: 1.5em;
+  line-height: 1.15;
+  padding-bottom: 2.5em;
 }
 .arrow {
   font-size: 50px;
@@ -136,14 +138,7 @@ h2 {
   width: 100%;
 }
 .intro-inner {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-row-gap: 50px;
-  grid-column-gap: 50px;
-  max-width: 1320px;
-  margin-left: auto;
-}
-.grid {
+  position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-row-gap: 50px;
@@ -152,13 +147,18 @@ h2 {
   margin-left: auto;
   margin-right: auto;
 }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-row-gap: 50px;
+  grid-column-gap: 50px;
+  max-width: 1320px;
+  margin-left: auto;
+  margin-right: auto;
+}
 .intro {
   background: #E7F3F5;
-  padding: 100px;
-}
-.overlap-container {
-  position: relative;
-  margin-left: auto;
+  padding: 5em;
 }
 .intro-image {
   width: 702px;
@@ -166,8 +166,8 @@ h2 {
 .intro-text {
   position: absolute;
   width: 626px;
-  bottom: 40px;
-  right: -500px;
+  right: 3em;
+  top: 2em;
   background-color: #fff;
   border-left: 8px solid #80BC00;
   border-radius: 0 30px 30px 0;
@@ -233,6 +233,7 @@ ul {
   display: inline-flex;
 }
 .social li {
+  font-size: 26px;
   margin-right: 15px;
   text-align: left;
 }
@@ -264,6 +265,9 @@ ul {
 .bigger {
   font-size: 22px;
 }
+.footer-copyright {
+  font-size: 11px;
+}
 input:focus,
 textarea:focus,
 select:focus {
@@ -289,7 +293,7 @@ select:focus {
 }
 i.fa.fa-chevron-right {
   color: #97D22A;
-  font-size: 18px;
+  font-size: 15px;
 }
 body .gform_wrapper .gform_body .gform_fields .gfield input[type="text"],
 body .gform_wrapper .gform_body .gform_fields .gfield input[type="email"],
@@ -306,36 +310,75 @@ body .gform_wrapper .gform_body .gform_fields .gfield textarea {
   height: 46px;
   border: 2 px solid #006188 !important;
 }
+#gform_wrapper_1 .gform_fields .gfield input::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: #0085A0;
+}
+#gform_wrapper_1 .gform_fields .gfield input::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #0085A0;
+}
+#gform_wrapper_1 .gform_fields .gfield input:-ms-input-placeholder {
+  /* IE 10+ */
+  color: #0085A0;
+}
+#gform_wrapper_1 .gform_fields .gfield input:-moz-placeholder {
+  /* Firefox 18- */
+  color: #0085A0;
+}
 #input_1_1,
 #input_1_2 {
   border: 2px solid #006188;
   padding-left: 15px;
-  color: #0085A0 !important;
+  color: #0085A0;
 }
-/* input #input_1_1 :before {
-    content: '\f1d8';
-    
-    font-family: fontAwesome;
-    color: @green; 
-  } */
-/* *** Media Queries *** */
+.gform_fields li.name .ginput_container,
+.gform_fields li.email .ginput_container {
+  position: relative !important;
+}
+.gform_fields li.name .ginput_container i,
+.gform_fields li.email .ginput_container i {
+  --fa-secondary-opacity: 1.0;
+  --fa-secondary-color: #80bc00;
+  position: absolute;
+  z-index: 10;
+  top: 26px;
+  left: 25px;
+}
+li#field_1_1.name input,
+li#field_1_2.email input {
+  position: relative;
+  padding-left: 60px;
+}
+.gform_wrapper div.validation_error {
+  color: #fff !important;
+  border-top: 1px solid #fff !important;
+  border-bottom: 1px solid #fff !important;
+}
+.gform_wrapper .validation_message {
+  color: #fff !important;
+}
+.gform_wrapper li.gfield.gfield_error,
+.gform_wrapper li.gfield.gfield_error.gfield_contains_required.gfield_creditcard_warning {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  border-top: 1px solid #97D22A !important;
+  border-bottom: 1px solid #97D22A !important;
+}
+/* ******** Media Queries ******** */
 @media (max-width: 1200px) {
   .header-button {
     right: 50px;
   }
   .intro-inner {
-    grid: none;
-  }
-  .overlap-container {
-    margin: 0;
+    position: initial;
+    grid-column-gap: 10px;
   }
   .intro-image {
-    width: 602px;
+    width: 100%;
   }
   .intro-text {
-    width: 526px;
-    bottom: 20px;
-    right: 10px;
+    position: initial;
+    width: 100%;
     padding: 20px 50px 20px 50px;
   }
   .intro-text h3 {
@@ -366,25 +409,23 @@ body .gform_wrapper .gform_body .gform_fields .gfield textarea {
     padding-top: 40px;
   }
   .hero-text h1 {
-    font-size: 75px;
-    padding-bottom: 3em;
+    font-size: 85px;
   }
-  .intro {
-    padding: 60px;
-    height: 720px;
+  .arrow {
+    bottom: 1px;
   }
   .intro-inner {
-    display: grid;
     grid-template-columns: 1fr;
-  }
-  .intro-image {
-    width: 500px;
+    grid-row-gap: 15px;
   }
   .intro-text {
-    bottom: -250px;
+    border-left: 0;
+    border-top: 8px solid #80BC00;
+    border-radius: 0 0 30px 30px;
   }
   .intro-text h3 {
-    margin-block-start: 0.5em /* margin-block-end: 0.5em; */;
+    font-size: 35px;
+    margin-block-start: 0.5em;
   }
   .grid {
     grid-column-gap: 0px;
@@ -411,13 +452,17 @@ body .gform_wrapper .gform_body .gform_fields .gfield textarea {
     font-size: 55px;
     padding-bottom: 3em;
   }
+  .arrow {
+    bottom: 15px;
+  }
   .grid {
     grid-template-columns: 1fr;
-    padding-left: 20px;
-    padding-right: 20px;
   }
-  .intro-image {
-    width: 90%;
+  .grid .contact-text:nth-of-type(1) {
+    order: 2;
+  }
+  .intro {
+    padding: 3em;
   }
   .impact {
     height: auto;
@@ -450,27 +495,30 @@ body .gform_wrapper .gform_body .gform_fields .gfield textarea {
   .email-signup {
     min-height: 325px;
   }
+  .mobile-center {
+    text-align: center;
+  }
 }
 @media (max-width: 480px) {
   .hero-text h1 {
     font-size: 40px;
+    padding-bottom: 4em;
   }
   .arrow {
     font-size: 40px;
-    bottom: 40px;
+    bottom: 0;
   }
   .intro {
-    padding: 30px 20px;
-    height: 750px;
+    padding: 2em;
   }
   .overlap-container {
     position: initial;
   }
   .intro-text {
-    width: 85%;
-    bottom: -550px;
-    right: 20px;
     padding: 15px 25px;
+  }
+  .intro-text h3 {
+    font-size: 25px;
   }
   .email-signup h2 {
     font-size: 28px;

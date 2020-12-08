@@ -31,9 +31,6 @@ get_header();
 		<!-- Intro Section -->
 		<div id="intro" class="intro">
 			<div class="intro-inner">
-				
-
-				<div class="overlap-container">
 					
 					<img class="intro-image" src="<?php the_field('intro_image'); ?>" />
 					
@@ -42,7 +39,7 @@ get_header();
 						<p><?php the_field('intro_text'); ?></p>
 						
 					</div>
-				</div>
+				
 			</div>
 		</div>
 
@@ -55,7 +52,7 @@ get_header();
 						
 					<div class="donate">
 						<!-- todo: donate CTA button -->
-						<button class="button bold">Donate <span class="green chevron"><i class="fas fa-chevron-right"></i></span></button>
+						<a href="https://www.paypal.com/donate/?hosted_button_id=5F3SLSBR8QEML" target="new"><button class="button bold">Donate <span class="green chevron"><i class="fas fa-chevron-right"></i></span></button></a>
 						</div>
 				</div>
 				<div class="impact-image">
