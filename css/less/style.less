@@ -5,6 +5,9 @@
 // Mixins 
 // Misc
 
+html {
+  scroll-behavior: smooth;
+}
 
 body {
     font-family: 'Lora', serif;
@@ -12,11 +15,17 @@ body {
     font-size: 16px;
     color: @dark;
     line-height: 1.5;
+    width:100%;
+}
+a {
+text-decoration: none;
+color:#fff;
 }
 h2 {
     font-weight: 400;
     font-size: 42px;
     color: #006188;
+    line-height:1.2;
 }
 .site-header {
     width: 100%;
@@ -48,7 +57,7 @@ h2 {
     font-size: 16px;
 }
 .donate {
-    margin-top: 45px;
+    margin-top: 25px;
     font-family: 'Lora', serif;
     font-size: 20px;
 }
@@ -57,24 +66,32 @@ h2 {
     box-shadow: 0px 3px 6px #00000029;
     border: 2px solid #FFFFFF;
     border-radius: 24px;
-    width: 127px;
+    min-width: 157px;
     height: 46px;
-    padding: 5px;
+    padding: 5px 20px;
+    font-size:20px;
     color: #fff;
     &:hover {
         background: #921267;
         transition-duration: 0.2s;
+        cursor:pointer;
+    }
+    &:focus {
+    	outline: none !important;
     }
 }
 .bold {
     font-weight: 700;
 }
 .chevron {
-    font-size: 12px;
-    padding-left: 2px;
+    font-size: 15px;
+    padding-left: 5px;
+}
+.lock {
+	font-size:16px;
+	padding-right:3px;
 }
 .hero {
-    background-image: url('../assets/LifeReimagined_Banner.jpg');
     height: 900px;
     background-size: cover;
     background-position: center;
@@ -94,13 +111,19 @@ h2 {
     text-align: center;
     color: #fff;
     margin-left: auto;
-    padding-top: 350px;
+    padding-top: 290px;
     width: 100%;
     h1 {
         font-size: 100px;
         font-weight: 400;
-        line-height: 1.25;
-        padding-bottom: 1.5em;
+        line-height: 1.15;
+        padding-bottom: 2.5em;
+    }
+    h2 {
+    	color:#fff;
+    	font-size:55px;
+    	text-shadow: 0px 3px 6px #00000029;
+    	align-content: center;
     }
 }
 .arrow {
@@ -111,29 +134,30 @@ h2 {
     left: 0;
     width: 100%;
 }
+
 .intro-inner {
+	position:relative;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-row-gap: 50px;
     grid-column-gap: 50px;
     max-width: 1320px;
     margin-left: auto;
+    margin-right:auto;
 }
 .grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    // grid-template-columns: 1fr 1fr;
     grid-row-gap: 50px;
     grid-column-gap: 50px;
     max-width: 1320px;
     margin-left: auto;
+    margin-right:auto;
 }
 .intro {
     background: @light-blue;
-    padding: 100px;
-}
-.overlap-container {
-    position: relative;
-    margin-left: auto;
+    padding: 5em;
 }
 .intro-image {
     width: 702px;
@@ -141,8 +165,8 @@ h2 {
 .intro-text {
     position: absolute;
     width: 626px;
-    bottom: 40px;
-    right: -500px;
+    right: 3em;
+    top: 2em;
     background-color: #fff;
     border-left: 8px solid @green;
     border-radius: 0 30px 30px 0;
@@ -161,20 +185,144 @@ h2 {
 }
 .impact-text {
     text-align: center;
-    width: 431px;
-    padding: 30px 0px;
+    padding: 2.5em;
     margin: 0 auto;
 }
 .impact-image {
     width: 100%;
+    text-align:center;
     img {
         width: 326px;
         margin-top: -49px;
     }
 }
+
+// Single page styles
+.page-hero {
+    height: 620px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+.page-hero-text {
+    // margin: 0 auto;
+    position: absolute;
+    text-align: center;
+    color: #ffffff;
+    padding-top: 190px;
+    width: 100%;
+    h2 {
+    	color:#fff;
+    	font-size:55px;
+    	text-shadow: 0px 3px 6px #00000029;
+    	align-content: center;
+    }
+    p {
+    	color:#fff;
+    	font-size:20px;
+    	text-shadow: 0px 2px 4px #00000033;
+    	margin-left: auto;
+    	margin-right: auto;
+    	max-width:900px;
+    }
+    h4 {
+    	font-size:26px;
+    	font-style: italic;
+    }
+}
+.page-intro {
+    background: @light-blue;
+    padding: 8em 5em;
+}
+.page-intro-image {
+    width: 780px;
+    position: absolute;
+    right: 2em;
+    top: -3em;
+    z-index:1;
+}
+.page-intro-text {
+    // position: absolute;
+    width: 626px;
+    // right: 3em;
+    // top: 2em;
+    background-color: #fff;
+    border-left: 8px solid @green;
+    border-radius: 0 30px 30px 0;
+    color: @dark;
+    padding: 20px 60px 30px 50px;
+    border-radius: 0px 30px 30px 0px;
+    z-index:2;
+    h3 {
+        color: #006188;
+        font-size: 35px;
+        font-weight: 400;
+    }
+}
+.section-container {
+	text-align: center;
+	padding:5em;
+	img {
+		max-width:105px;
+	}
+	h3 {
+		color:@green;
+		font-size:22px;
+		font-weight:normal;
+		font-style: italic;
+	}
+}
+.grid-3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-row-gap: 50px;
+    grid-column-gap: 120px;
+    max-width: 1320px;
+    margin-left: auto;
+    margin-right:auto;
+    padding:2em 0;
+}
+
+
+// 404 page styles
+.oops-content {
+	background:@light-blue !important;
+	padding-top:2em;
+	height:75vh;
+	text-align:center;
+}
+.oops-title {
+	font-size: 2em;
+    font-weight: 400;
+    color: #034965;
+    text-align: center;
+    padding: 9em 2em 0 2em;
+}
+.oops-button {
+	background: @green 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 6px #00000029;
+    border: 2px solid #FFFFFF;
+    border-radius: 24px;
+    height: 45px;
+    width: 215px;
+    padding: 9px;
+    font-family: 'Lora', serif;
+    font-weight: bold;
+    font-size: 20px;
+    color: #fff;
+    // margin-top: 65px;
+    &:hover {
+            background: #97D22A;
+            transition-duration: 0.2s;
+        }
+}
+
+// footer styles
 .site-footer {
     background: @dark-blue;
 }
+
 .contact {
     background: transparent url('../assets/LifeReimagined_Pattern.png') 0% 0% repeat padding-box;
     padding: 100px;
@@ -186,15 +334,29 @@ h2 {
     color: #fff;
     font-size: 22px;
 }
-ul {
-    padding-inline-start: 0;
+.address-list {
+	display: block;
+    line-height: 2;
+    padding-top: 1em;
 }
-.social {
+.address-list li {
+	padding-left:15px;
+}
+ul {
+    font-size:20px;
+    padding-inline-start: 0;
     margin: 0;
     list-style-type: none;
     display: inline-flex;
+}
+.social {
+    margin-left: 15px;
+    padding-top:15px;
+    list-style-type: none;
+    display: inline-flex;
     li {
-        margin-right: 25px;
+    	font-size:26px;
+        margin-right: 15px;
         text-align: left;
     }
 }
@@ -207,7 +369,7 @@ ul {
 .email-signup {
     background: @dark-blue;
     border-radius: 25px;
-    padding: 20px 50px;
+    padding: 30px 50px;
     color: @lime;
     h2 {
         text-align: center;
@@ -226,6 +388,17 @@ ul {
 .bigger {
     font-size: 22px;
 }
+
+.footer-copyright {
+	font-size:11px;
+}
+
+
+// removed outline on form elements
+input:focus, textarea:focus, select:focus {
+	outline-offset: 0px !important;
+	outline: none !important;
+}
 #gform_submit_button_1 {
     background: @green 0% 0% no-repeat padding-box;
     box-shadow: 0px 3px 6px #00000029;
@@ -238,7 +411,7 @@ ul {
     font-weight: bold;
     font-size: 20px;
     color: #fff;
-    margin-top: 65px;
+    // margin-top: 65px;
     &:hover {
             background: #97D22A;
             transition-duration: 0.2s;
@@ -249,53 +422,111 @@ i {
     &.fa {
         &.fa-chevron-right {
             color: @lime;
-            font-size: 18px;
+            font-size: 15px;
         }
     }
 }
-.gform_wrapper *, .gform_wrapper :after, .gform_wrapper :before {
-    border-radius: 24px;
-    height: 46px;
+
+body .gform_wrapper .gform_body .gform_fields .gfield input[type="text"], body .gform_wrapper .gform_body .gform_fields .gfield input[type="email"], body .gform_wrapper .gform_body .gform_fields .gfield input[type="url"], body .gform_wrapper .gform_body .gform_fields .gfield input[type="tel"], body .gform_wrapper .gform_body .gform_fields .gfield input[type="password"], body .gform_wrapper .gform_body .gform_fields .gfield select, body .gform_wrapper .gform_body .gform_fields .gfield textarea {
+background-color: #fff;
+color: #333;
+-webkit-border-radius: 24px;
+-moz-border-radius: 24px;
+border-radius: 24px;
+height: 46px;
     border: 2 px solid #006188 !important;
 }
+
+// Changes color of placeholder text in form
+
+#gform_wrapper_1 .gform_fields .gfield input::-webkit-input-placeholder {
+	/* Chrome/Opera/Safari */
+  color: @teal;
+}
+#gform_wrapper_1 .gform_fields .gfield input::-moz-placeholder { 
+	/* Firefox 19+ */
+  color: @teal;
+}
+#gform_wrapper_1 .gform_fields .gfield input:-ms-input-placeholder {
+	/* IE 10+ */
+  color: @teal;
+}
+#gform_wrapper_1 .gform_fields .gfield input:-moz-placeholder {
+	/* Firefox 18- */
+  color: @teal;
+}
+
 #input_1_1, #input_1_2 {
     border: 2px solid #006188;
     padding-left: 15px;
-    margin-bottom: 30px;
-    color: @teal !important;
+    color:@teal;
 }
-/* input #input_1_1 :before {
-    content: '\f1d8';
-    
-    font-family: fontAwesome;
-    color: @green; 
-  } */
+
+// style icons added to form fields with jquery
+.gform_fields li.name .ginput_container,
+.gform_fields li.email .ginput_container {
+	position:relative !important;
+}
+
+.gform_fields li.name .ginput_container i,
+.gform_fields li.email .ginput_container i{
+		--fa-secondary-opacity: 1.0;
+    --fa-secondary-color: #80bc00;
+	position: absolute;
+    z-index: 10;
+    top: 26px;
+    left: 25px;
+}
+
+li#field_1_1.name input,
+li#field_1_2.email input {
+position:relative;
+padding-left: 60px;
+}
+
+// overrides error message styling
+.gform_wrapper div.validation_error {
+	color:#fff !important;
+	border-top: 1px solid #fff !important;
+	border-bottom:1px solid #fff !important;
+}
+.gform_wrapper .validation_message {
+	color:#fff !important;
+}
+.gform_wrapper li.gfield.gfield_error, .gform_wrapper li.gfield.gfield_error.gfield_contains_required.gfield_creditcard_warning {
+	background-color: rgba(255,255,255,.1) !important;
+	border-top:1px solid @lime !important;
+	border-bottom:1px solid @lime !important;
+}
 
 
 
+// ************************************
+  /* ******** Media Queries ******** */
+// ************************************
 
-  /* *** Media Queries *** */
 @media (max-width:1200px) {
 .header-button {
     right:50px;
 }
 .intro-inner {
-    grid: none;
-}
-.overlap-container {
-    margin:0;
+	position:initial;
+    grid-column-gap:10px;
 }
 .intro-image {
-    width:602px;
+    width:100%;
 }
 .intro-text {
-    width: 526px;
-    bottom: 20px;
-    right: 10px;
+	position: initial;
+    width: 100%;
     padding:20px 50px 20px 50px;
 }
 .intro-text h3 {
     font-size: 25px;
+}
+.page-intro-image {
+	position:initial;
+	width:100%;
 }
 .footer-logo {
     width:285px;
@@ -322,26 +553,23 @@ i {
     padding-top:40px;
 }
 .hero-text h1 {
-    font-size: 75px;
-    padding-bottom: 3em;
+    font-size: 85px;
 }
-.intro {
-    padding:60px;
-    height: 720px;
+.arrow {
+	bottom:1px;
 }
 .intro-inner {
-    display:grid;
-    grid-template-columns: 1fr;
-}
-.intro-image {
-    width:500px;
+	grid-template-columns: 1fr;
+    grid-row-gap: 15px;
 }
 .intro-text {
-    bottom: -250px;
+    border-left:0;
+    border-top: 8px solid @green;
+    border-radius: 0 0 30px 30px;
 }
 .intro-text h3 {
+	font-size: 35px;
     margin-block-start: 0.5em
-    /* margin-block-end: 0.5em; */
 }
 .grid {
     grid-column-gap: 0px;
@@ -349,20 +577,53 @@ i {
 .impact-image {
     text-align:center;
 }
+.page-intro {
+	padding:5em;
+}
+.page-intro-text {
+	width:100%;
+	border-left:none;
+	border-bottom: 8px solid @green;
+	border-radius:30px 30px 0px 0px;
+}
+.grid-3 {
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 50px;
+    padding: 10px 30px;
+  }
 }
 
 @media (max-width:768px) {
-.hero {
-    height:90vh;
+.site-branding {
+    width:272px;
+}  
+.logo {
+    width:204px;
+    padding:10px 0;
 }
+.hero {
+    height:600px;
+}
+.hero-text {
+    	padding-top:250px;
+    }
 .hero-text h1 {
     font-size: 55px;
     padding-bottom: 3em;
 }
+.arrow {
+	bottom:15px;
+}
 .grid {
     grid-template-columns: 1fr;
-    padding-left:20px;
-    padding-right: 20px;
+}
+// stacking email over contact on mobile
+ .grid .contact-text:nth-of-type(1) {
+    order: 2;
+  }
+
+.intro {
+	padding:3em;
 }
 .impact {
     height: auto;
@@ -376,6 +637,22 @@ i {
 }
 .impact-image img {
     width:150px;
+}
+.page-hero {
+	height:75vh;
+}
+.page-hero-text {
+	padding-left: 1em;
+	padding-right: 1em;
+	h2 {
+	font-size:40px;
+	}
+}
+.page-intro {
+	padding:3em;
+}
+.oops-title {
+    padding: 8em 2em 0 2em;
 }
 .footer-logo {
     width:255px;
@@ -395,32 +672,52 @@ i {
 .email-signup {
     min-height: 325px;
 }
+.mobile-center {
+	text-align:center;
+}
+.grid-3 {
+    display:initial;
+  }
 }
 
 @media (max-width:480px) {
     .hero-text h1 {
-        font-size: 45px;
+        font-size: 40px;
+    	padding-bottom: 4em;
     }
     .arrow {
         font-size: 40px;
-        bottom:40px;
+        bottom:0;
     }
     .intro {
-        padding: 30px 20px;
-    height: 700px;
+        padding: 2em;
     }
     .overlap-container {
         position: initial;
     }
-    .intro-image {
-        width:90%;
-    }
     .intro-text {
-        width:85%;
-        bottom: -630px;
-        right:20px;
         padding: 15px 25px;
+        & h3 {
+        	font-size: 25px;
+        }
     }
+    .page-hero-text {
+    	p {
+    		font-size:16px;
+    	}
+    	h4 {
+    		font-size:22px;
+    	}
+    }
+    .page-intro {
+	padding:2em;
+}
+.page-intro-text {
+	padding:20px;
+}
+    .oops-title {
+    padding: 7em 1em 0 1em;
+}
     .email-signup h2 {
         font-size: 28px;
     }
